@@ -4,3 +4,59 @@ body {
   background: linear-gradient(225deg, #ef38c7 0%, #11998e 100%) no-repeat;
   background-size: cover;
 }
+
+.enemy-field,
+.client-field {
+  width: 100%;
+  height: 100%;
+  min-width: 255px;
+  min-height: 344px;
+  position: relative;
+}
+
+div.health-bar-wrapper {
+  background-color: rgba(4, 9, 33, 0.8);
+  width: 100%;
+  height: 100%;
+  max-height: 73px;
+  max-width: 100%;
+}
+
+.enemy-field > .health-bar-wrapper,
+.client-field > .health-bar-wrapper {
+  position: absolute;
+  bottom: 0;
+}
+
+canvas {
+  height: 100%;
+  width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.char-animation {
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .enemy-field > .health-bar-wrapper {
+    border-radius: 15px 0px 0px 0px;
+  }
+
+  .client-field > .health-bar-wrapper {
+    border-radius: 0px 15px 0px 0px;
+  }
+
+  .game-window-wrapper {
+    overflow: hidden;
+    border-radius: 15px 15px 0px 0px;
+    width: 510px;
+    height: 344px;
+  }
+
+  div.health-bar-wrapper {
+    max-height: 73px;
+    max-width: 255px;
+  }
+}
