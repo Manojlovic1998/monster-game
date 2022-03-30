@@ -59,4 +59,10 @@ canvas {
     max-height: 73px;
     max-width: 255px;
   }
+
+  /* Btn Section */
+  .button-wrapper {
+    max-width: 540px;
+    gap: 30px;
+  }
 }
