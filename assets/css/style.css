@@ -66,3 +66,8 @@ canvas {
     gap: 30px;
   }
 }
+
+.btn-primary {
+  background-color: #00386C;
+  border-color: #00386C;
+}
