@@ -1,7 +1,9 @@
 let app = Vue.createApp({
   data() {
     return {
-      testData: "Hello World!",
+      // Monster and Player Data
+      playerHealth: 100,
+      monsterHealth: 100,
     };
   },
 });
