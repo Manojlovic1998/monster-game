@@ -144,7 +144,11 @@
             <button class="btn btn-primary btn-lg" @click="attackMonster">
               <img src="assets/img/attack-icon.svg" alt="Sword icon" />
             </button>
-            <button class="btn btn-primary btn-lg">
+            <button
+              class="btn btn-primary btn-lg"
+              :disabled="specialButtonStatus"
+              @click="specialAttack"
+            >
               <img src="assets/img/special-attack-icon.svg" alt="Sword icon" />
             </button>
             <button class="btn btn-primary btn-lg">
