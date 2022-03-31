@@ -3,6 +3,23 @@ body {
   min-width: 100vw;
   background: linear-gradient(225deg, #ef38c7 0%, #11998e 100%) no-repeat;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+main > div {
+  flex-grow: 1;
+  display: flex;
+}
+
+.text-pink {
+  color: #ef38c7;
 }
 
 .enemy-field,
@@ -39,6 +56,10 @@ canvas {
   height: 100%;
 }
 
+.game-window-wrapper {
+  padding-bottom: 264px;
+}
+
 @media (min-width: 768px) {
   .enemy-field > .health-bar-wrapper {
     border-radius: 15px 0px 0px 0px;
@@ -53,6 +74,7 @@ canvas {
     border-radius: 15px 15px 0px 0px;
     width: 510px;
     height: 344px;
+    padding-bottom: 0;
   }
 
   div.health-bar-wrapper {
@@ -64,10 +86,34 @@ canvas {
   .button-wrapper {
     max-width: 540px;
     gap: 30px;
+    padding-bottom: 264px;
   }
 }
 
 .btn-primary {
-  background-color: #00386C;
-  border-color: #00386C;
+  background-color: #00386c;
+  border-color: #00386c;
+}
+
+.battle-log-wrapper {
+  background-color: #ffffff;
+  display: flex;
+  position: absolute;
+  transform: translate(-50%, 0);
+  bottom: 0;
+  left: 50%;
+  max-height: 248px;
+  max-width: 510px;
+  height: 100%;
+  width: 100%;
+  border: 2px solid #ef38c7;
+  border-radius: 15px 15px 0 0;
+}
+
+.battle-log {
+  flex-grow: 1;
+}
+
+.battle-log > * {
+  width: 100%;
 }
