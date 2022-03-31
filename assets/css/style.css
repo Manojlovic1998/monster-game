@@ -125,3 +125,34 @@ canvas {
 .battle-log > * {
   width: 100%;
 }
+
+.health-bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.healthbar {
+  height: 29px;
+  border: 1px solid #575757;
+  background: #fde5e5;
+  max-width: 229px;
+  width: 100%;
+  margin-top: 13px;
+  margin-bottom: 9px;
+}
+
+.health-label {
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.healthbar-value {
+  background-color: #00a876;
+  width: 100%;
+  height: 100%;
+}
