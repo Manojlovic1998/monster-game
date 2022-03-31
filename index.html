@@ -117,11 +117,12 @@
               Special Attack
             </button>
             <button
+              @click="healPlayer"
               class="btn btn-primary fw-bolder px-5 py-2 d-flex align-items-center"
             >
               <img
                 src="assets/img/heal-action-icon.svg"
-                alt="Special sword icon"
+                alt="Heal icon"
                 class="me-2"
               />
               Heal
@@ -131,7 +132,7 @@
             >
               <img
                 src="assets/img/heal-action-icon.svg"
-                alt="Special sword icon"
+                alt="Surrender icon"
                 class="me-2"
               />
               Surrender
@@ -151,11 +152,11 @@
             >
               <img src="assets/img/special-attack-icon.svg" alt="Sword icon" />
             </button>
-            <button class="btn btn-primary btn-lg">
-              <img src="assets/img/heal-action-icon.svg" alt="Sword icon" />
+            <button class="btn btn-primary btn-lg" @click="healPlayer">
+              <img src="assets/img/heal-action-icon.svg" alt="Heal icon" />
             </button>
             <button class="btn btn-primary btn-lg">
-              <img src="assets/img/surrender-icon.svg" alt="Sword icon" />
+              <img src="assets/img/surrender-icon.svg" alt="Flag icon" />
             </button>
           </div>
           <!-- Battle Log Section -->
