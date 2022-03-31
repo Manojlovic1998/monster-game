@@ -63,7 +63,7 @@
                   Enemy Health
                 </p>
                 <div class="healthbar">
-                  <div class="healthbar-value"></div>
+                  <div class="healthbar-value" :style="monsterBarStyle"></div>
                 </div>
               </div>
             </div>
@@ -84,7 +84,7 @@
                   Your Health
                 </p>
                 <div class="healthbar">
-                  <div class="healthbar-value"></div>
+                  <div class="healthbar-value" :style="playerBarStyle"></div>
                 </div>
               </div>
             </div>
@@ -95,6 +95,7 @@
           >
             <button
               class="btn btn-primary fw-bolder px-5 py-2 d-flex align-items-center"
+              @click="attackMonster"
             >
               <img
                 src="assets/img/attack-icon.svg"
@@ -138,7 +139,7 @@
           <div
             class="mobile-button-wrapper d-flex justify-content-evenly d-md-none fixed-bottom mb-3 w-100"
           >
-            <button class="btn btn-primary btn-lg">
+            <button class="btn btn-primary btn-lg" @click="attackMonster">
               <img src="assets/img/attack-icon.svg" alt="Sword icon" />
             </button>
             <button class="btn btn-primary btn-lg">
