@@ -9,6 +9,7 @@ let app = Vue.createApp({
       // Monster and Player Data
       playerHealth: 100,
       monsterHealth: 100,
+      currentRound: 0,
     };
   },
   computed: {
@@ -18,10 +19,18 @@ let app = Vue.createApp({
     playerBarStyle() {
       return { width: this.playerHealth + "%" };
     },
+    specialButtonStatus() {
+      if (this.currentRound === 0) {
+        return true;
+      }
+      return this.currentRound % 3 !== 0;
+    },
   },
   methods: {
     // Atack Action
     attackMonster() {
+      this.currentRound++;
+      console.log(this.currentRound);
       // Random num is multiplied by (maxNum - minNum)
       // Take a floor value of the above expression to round the expression result
       // add the minimum again
@@ -38,6 +47,14 @@ let app = Vue.createApp({
       const attackValue = getRandomValue(15, 8);
       // Reduce players' health by the attack value
       this.playerHealth -= attackValue;
+    },
+    specialAttack() {
+      const attackValue = getRandomValue(10, 25);
+      this.monsterHealth -= attackValue;
+
+      // Monster attacks back
+      this.attackPlayer();
+      this.currentRound++;
     },
   },
 });

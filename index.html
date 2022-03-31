@@ -105,6 +105,8 @@
               Attack
             </button>
             <button
+              :disabled="specialButtonStatus"
+              @click="specialAttack"
               class="btn btn-primary fw-bolder px-4 py-2 d-flex align-items-center"
             >
               <img
