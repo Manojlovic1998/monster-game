@@ -100,6 +100,9 @@ let app = Vue.createApp({
       this.playerHealth = 100;
       this.currentRound = 0;
     },
+    surrender() {
+      this.winner = "monster";
+    },
   },
 });
 

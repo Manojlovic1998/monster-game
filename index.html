@@ -92,6 +92,7 @@
           <!-- Button Section -->
           <div
             class="button-wrapper mx-auto mt-3 d-none d-md-flex justify-content-evenly flex-wrap"
+            v-if="!winner"
           >
             <button
               class="btn btn-primary fw-bolder px-5 py-2 d-flex align-items-center"
@@ -129,6 +130,7 @@
             </button>
             <button
               class="btn btn-primary fw-bolder px-5 py-2 d-flex align-items-center"
+              @click="surrender"
             >
               <img
                 src="assets/img/surrender-icon.svg"
@@ -141,6 +143,7 @@
           <!-- Mobile Button Section -->
           <div
             class="mobile-button-wrapper d-flex justify-content-evenly d-md-none fixed-bottom mb-3 w-100"
+            v-if="!winner"
           >
             <button class="btn btn-primary btn-lg" @click="attackMonster">
               <img src="assets/img/attack-icon.svg" alt="Sword icon" />
@@ -155,7 +158,7 @@
             <button class="btn btn-primary btn-lg" @click="healPlayer">
               <img src="assets/img/heal-action-icon.svg" alt="Heal icon" />
             </button>
-            <button class="btn btn-primary btn-lg">
+            <button class="btn btn-primary btn-lg" @click="surrender">
               <img src="assets/img/surrender-icon.svg" alt="Flag icon" />
             </button>
           </div>
