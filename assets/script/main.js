@@ -62,12 +62,11 @@ let app = Vue.createApp({
       if (this.playerHealth + healValue > 100) {
         this.playerHealth = 100;
         // Monster attacks back
-        this.attackPlayer();
       } else {
         this.playerHealth += healValue;
         // Monster attacks back
-        this.attackPlayer();
       }
+      this.attackPlayer();
     },
   },
 });
