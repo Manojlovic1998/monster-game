@@ -167,6 +167,17 @@
               </p>
             </div>
           </div>
+          <!-- Winner message -->
+          <div
+            class="position-fixed winner-message d-flex flex-column justify-content-center align-items-center"
+            v-if="winner"
+          >
+            <p class="fs-4 fw-bold">Game Over!</p>
+            <p v-if="winner === 'draw'" class="fw-bolder">It's a draw</p>
+            <p v-else-if="winner === 'player'" class="fw-bolder">You won!</p>
+            <p v-else="winner === 'monster'" class="fw-bolder">You lost!</p>
+            <button @click="closeMessage" class="btn btn-primary">Close</button>
+          </div>
         </div>
       </div>
     </main>

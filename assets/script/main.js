@@ -10,6 +10,7 @@ let app = Vue.createApp({
       playerHealth: 100,
       monsterHealth: 100,
       currentRound: 0,
+      winner: null,
     };
   },
   computed: {
@@ -26,11 +27,30 @@ let app = Vue.createApp({
       return this.currentRound % 3 !== 0;
     },
   },
+  watch: {
+    playerHealth(value) {
+      if (value <= 0 && this.monsterHealth <= 0) {
+        // A draw
+        this.winner = "draw";
+      } else if (value <= 0) {
+        // Player lost
+        this.winner = "monster";
+      }
+    },
+    monsterHealth(value) {
+      if (value <= 0 && this.playerHealth <= 0) {
+        // A draw
+        this.winner = "draw";
+      } else if (value <= 0) {
+        // Monster lost
+        this.winner = "player";
+      }
+    },
+  },
   methods: {
     // Atack Action
     attackMonster() {
       this.currentRound++;
-      console.log(this.currentRound);
       // Random num is multiplied by (maxNum - minNum)
       // Take a floor value of the above expression to round the expression result
       // add the minimum again
@@ -67,6 +87,12 @@ let app = Vue.createApp({
         // Monster attacks back
       }
       this.attackPlayer();
+    },
+    closeMessage() {
+      this.winner = null;
+      this.monsterHealth = 100;
+      this.playerHealth = 100;
+      this.currentRound = 0;
     },
   },
 });
