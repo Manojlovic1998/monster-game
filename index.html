@@ -197,10 +197,7 @@
                     >
                       {{' ' + logMessage.actionValue}} damage</span
                     >
-                    <span
-                      v-if="logMessage.actionType === 'heals'"
-                      class="text-darkblue fw-bolder"
-                    >
+                    <span v-else class="text-darkblue fw-bolder">
                       {{' ' + logMessage.actionValue}} HP</span
                     >
                   </p>
