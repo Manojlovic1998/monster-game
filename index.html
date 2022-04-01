@@ -187,10 +187,14 @@
                     >
                     <span
                       v-if="logMessage.actionType === 'attacks' || 'specialAttack'"
+                      class="text-darkblue fw-bolder"
                     >
                       {{' ' + logMessage.actionValue}} damage</span
                     >
-                    <span v-if="logMessage.actionType === 'heals'">
+                    <span
+                      v-if="logMessage.actionType === 'heals'"
+                      class="text-darkblue fw-bolder"
+                    >
                       {{' ' + logMessage.actionValue}} HP</span
                     >
                   </p>
