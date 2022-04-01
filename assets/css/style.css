@@ -120,6 +120,7 @@ canvas {
 
 .battle-log {
   flex-grow: 1;
+  overflow-y: auto;
 }
 
 .battle-log > * {

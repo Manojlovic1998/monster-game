@@ -168,6 +168,34 @@
               <p class="fw-bolder fs-4 text-center text-pink mt-2">
                 Battle Log
               </p>
+              <ul class="list-unstyled">
+                <li v-for="logMessage in logMessages" class="text-center">
+                  <p>
+                    <span
+                      :class="['fw-bolder' ,logMessage.actionBy === 'Player' ? 'text-pink' : 'text-red']"
+                    >
+                      {{logMessage.actionBy}}</span
+                    >,
+                    <span v-if="logMessage.actionType === 'attacks'"
+                      >attacks and deals</span
+                    >
+                    <span v-else-if="logMessage.actionType === 'specialAttack'"
+                      >special attacks and deals
+                    </span>
+                    <span v-else="logMessage.actionType === 'heals'"
+                      >heals for</span
+                    >
+                    <span
+                      v-if="logMessage.actionType === 'attacks' || 'specialAttack'"
+                    >
+                      {{' ' + logMessage.actionValue}} damage</span
+                    >
+                    <span v-if="logMessage.actionType === 'heals'">
+                      {{' ' + logMessage.actionValue}} HP</span
+                    >
+                  </p>
+                </li>
+              </ul>
             </div>
           </div>
           <!-- Winner message -->
